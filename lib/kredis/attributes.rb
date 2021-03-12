@@ -14,11 +14,11 @@ module Kredis::Attributes
       kredis_connection_with __method__, name, key, config: config
     end
 
-    def kredis_datetime(name, key: nil, config: :shared)
+    def kredis_decimal(name, key: nil, config: :shared)
       kredis_connection_with __method__, name, key, config: config
     end
 
-    def kredis_decimal(name, key: nil, config: :shared)
+    def kredis_datetime(name, key: nil, config: :shared)
       kredis_connection_with __method__, name, key, config: config
     end
 
