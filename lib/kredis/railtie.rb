@@ -23,9 +23,8 @@ class Kredis::Railtie < ::Rails::Railtie
   end
 
   initializer "kredis.attributes" do
-    # No load hook for Active Model, just defer until after initialization.
-    config.after_initialize do
-      ActiveModel::Model.include Kredis::Attributes if defined?(ActiveModel::Model)
+    ActiveSupport.on_load(:active_model) do
+      include Kredis::Attributes
     end
 
     ActiveSupport.on_load(:active_record) do
